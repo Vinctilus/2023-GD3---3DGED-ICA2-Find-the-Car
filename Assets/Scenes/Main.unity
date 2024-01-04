@@ -17940,7 +17940,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1587999779}
+    m_TransformParent: {fileID: 1636628475}
     m_Modifications:
     - target: {fileID: 100000, guid: 3a7e1c0a00828fd4196c8cd24886d2ed, type: 3}
       propertyPath: m_Name
@@ -17948,7 +17948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a7e1c0a00828fd4196c8cd24886d2ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 130
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a7e1c0a00828fd4196c8cd24886d2ed, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17956,11 +17956,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a7e1c0a00828fd4196c8cd24886d2ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 130.00003
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a7e1c0a00828fd4196c8cd24886d2ed, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a7e1c0a00828fd4196c8cd24886d2ed, type: 3}
       propertyPath: m_LocalRotation.x
@@ -17968,7 +17968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a7e1c0a00828fd4196c8cd24886d2ed, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a7e1c0a00828fd4196c8cd24886d2ed, type: 3}
       propertyPath: m_LocalRotation.z
@@ -20400,12 +20400,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1212694478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa35d0f565fb424b8b3b43fc43199ab, type: 3}
+  m_Script: {fileID: 11500000, guid: d9b4a4b9c36af4a419ab5bb32586571d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HiddenObjekt: {fileID: 11400000, guid: 2fc9b2a487ab86c4ba06b053ff3a5fcb, type: 2}
   dificultyObjekt: {fileID: 11400000, guid: 8424bc9b84d99974aa054fdb8152cef0, type: 2}
-  CarPref: {fileID: 8552239564312428267, guid: 7acbb81325a13624badec43970abd903, type: 3}
+  car: {fileID: 8552239564312428267, guid: 7acbb81325a13624badec43970abd903, type: 3}
   tospwan: 0
 --- !u!1001 &1220219107
 PrefabInstance:
@@ -26283,7 +26283,6 @@ Transform:
   - {fileID: 302702565}
   - {fileID: 348113327}
   - {fileID: 76506903}
-  - {fileID: 1055958792}
   - {fileID: 1636628475}
   - {fileID: 496084536}
   - {fileID: 50764962}
@@ -27339,7 +27338,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 400000, guid: 9bff4c4ffbc29a041a638ec3743c588d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1055958792}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bff4c4ffbc29a041a638ec3743c588d, type: 3}
 --- !u!4 &1636628475 stripped

@@ -7,18 +7,44 @@ using UnityEngine.UIElements;
 
 public class SpwanObjects : MonoBehaviour
 {
+    [SerializeField]
+    LayerMask MaskCarLayer;
+    [SerializeField]
+    GameObject Debugqube;
+    [SerializeField]
+    bool blocked = false;
+    [SerializeField]
+    float dontspwen = 16f;
+    [SerializeField]
+    float radiusdontspwen = 20f;
+    [SerializeField]
+    GameObject last;
+
+    private void Update()
+    {
+        RaycastHit hit;
+        blocked = false;
+        if (Physics.Raycast(transform.position + transform.forward, -transform.forward, out hit, dontspwen*2, MaskCarLayer)) { blocked = true; last = hit.transform.gameObject; } 
+        else if (Physics.Raycast(transform.position - transform.forward, transform.forward, out hit, dontspwen*2, MaskCarLayer)) { blocked = true; last = hit.transform.gameObject; }
+        else if(Physics.Raycast(transform.position - transform.forward* (dontspwen/2), transform.forward, out hit, dontspwen * 2, MaskCarLayer)) { blocked = true; last = hit.transform.gameObject; }
+
+
+       
+
+    }
+
     public Transform spwancar()
     {
         RaycastHit hit;
         Transform data = null;
-        Ray ray = new Ray(transform.position, Vector3.zero);
-        bool hitnothing = !Physics.SphereCast(transform.position - transform.forward * 0.5f, 25f, transform.forward, out hit, 1f, LayerMask.GetMask("Cars"));
+        bool hitnothing = true;
+     
 
-        
-        if (hitnothing) 
+        if (hitnothing&&!blocked) 
         { 
             
             data = transform;
+            blocked = true;
         }
 
         return data;

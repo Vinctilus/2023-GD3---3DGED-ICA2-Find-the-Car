@@ -88,7 +88,7 @@ public class NavCornercolision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (posibile_directios.Count == 0) { Start(); }
     }
 
     private Vector4 serachforgoal(Vector3 direction, Vector3 position,int x)
