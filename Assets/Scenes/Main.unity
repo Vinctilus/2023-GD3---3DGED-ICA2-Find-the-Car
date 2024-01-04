@@ -20406,7 +20406,8 @@ MonoBehaviour:
   HiddenObjekt: {fileID: 11400000, guid: 2fc9b2a487ab86c4ba06b053ff3a5fcb, type: 2}
   dificultyObjekt: {fileID: 11400000, guid: 8424bc9b84d99974aa054fdb8152cef0, type: 2}
   car: {fileID: 8552239564312428267, guid: 7acbb81325a13624badec43970abd903, type: 3}
-  tospwan: 0
+  tospwan: 91
+  totalspawn: 0
 --- !u!1001 &1220219107
 PrefabInstance:
   m_ObjectHideFlags: 0

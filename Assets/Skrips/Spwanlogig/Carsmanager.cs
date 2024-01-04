@@ -36,6 +36,7 @@ public class Carsmanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       totalspawn = transform.childCount;
        checkChilden();
         if (transform.childCount < tospwan)
         {
@@ -47,11 +48,19 @@ public class Carsmanager : MonoBehaviour
         }
     }
     [Button("Spwancar")]
-    void Spwancar()
+    void Spwancar(bool isHiddenOBJ = false)
     {
         Transform getposion =null;
+        GameObject VisalCartospwan = null;
         int random = Random.Range(0, spwarnpoins.Count-1);
-        GameObject VisalCartospwan = HiddenObjekt.getrendom(dificultyObjekt.curve);
+        if (isHiddenOBJ) 
+        {
+            VisalCartospwan = HiddenObjekt.hiddenobjekt; 
+        }
+        else
+        {
+             VisalCartospwan = HiddenObjekt.getrendom(dificultyObjekt.curve);
+        }
         for (int i = 0; getposion == null&&i<10;i++)
         {
             
@@ -63,7 +72,6 @@ public class Carsmanager : MonoBehaviour
         }
         if(getposion != null)
         {
-            Debug.Log("Spwarncar");
             GameObject Barincar = Instantiate(car, getposion.position, getposion.rotation);
             GameObject Visualcar = Instantiate(VisalCartospwan);
             Barincar.transform.parent= transform;
@@ -71,7 +79,12 @@ public class Carsmanager : MonoBehaviour
             Visualcar.transform.eulerAngles = Barincar.transform.eulerAngles;
             Visualcar.transform.localPosition = Vector3.zero;
 
-            Barincar.SetActive(true);
+            if (isHiddenOBJ && Barincar.TryGetComponent<NaveNextGoal>(out NaveNextGoal set))
+            {
+                set.Hiddenobjek = true;
+            }
+
+                Barincar.SetActive(true);
 
 
 

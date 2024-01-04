@@ -15,18 +15,14 @@ public class SpwanObjects : MonoBehaviour
     bool blocked = false;
     [SerializeField]
     float dontspwen = 16f;
-    [SerializeField]
-    float radiusdontspwen = 20f;
-    [SerializeField]
-    GameObject last;
 
     private void Update()
     {
         RaycastHit hit;
         blocked = false;
-        if (Physics.Raycast(transform.position + transform.forward, -transform.forward, out hit, dontspwen*2, MaskCarLayer)) { blocked = true; last = hit.transform.gameObject; } 
-        else if (Physics.Raycast(transform.position - transform.forward, transform.forward, out hit, dontspwen*2, MaskCarLayer)) { blocked = true; last = hit.transform.gameObject; }
-        else if(Physics.Raycast(transform.position - transform.forward* (dontspwen/2), transform.forward, out hit, dontspwen * 2, MaskCarLayer)) { blocked = true; last = hit.transform.gameObject; }
+        if (Physics.Raycast(transform.position + transform.forward, -transform.forward, out hit, dontspwen*2, MaskCarLayer)) { blocked = true;} 
+        else if (Physics.Raycast(transform.position - transform.forward, transform.forward, out hit, dontspwen*2, MaskCarLayer)) { blocked = true;}
+        else if(Physics.Raycast(transform.position - transform.forward* (dontspwen/2), transform.forward, out hit, dontspwen * 2, MaskCarLayer)) { blocked = true;}
 
 
        
