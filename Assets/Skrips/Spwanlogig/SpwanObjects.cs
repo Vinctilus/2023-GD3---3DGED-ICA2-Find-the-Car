@@ -12,7 +12,7 @@ public class SpwanObjects : MonoBehaviour
     [SerializeField]
     GameObject Debugqube;
     [SerializeField]
-    bool blocked = false;
+    public bool blocked = false;
     [SerializeField]
     float dontspwen = 16f;
 

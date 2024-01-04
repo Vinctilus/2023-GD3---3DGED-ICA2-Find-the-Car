@@ -14,12 +14,12 @@ public class CarRealtions : ScriptableObject
     public List<GameObject> Raltionlist = new List<GameObject>();
     public GameObject getrendom(AnimationCurve curve)
     {
-        List<float>Areas = new List<float>();
+       List<float>Areas = new List<float>();
        int steps = Raltionlist.Count;
-       float stepSize = curve.length / steps; //1
+       float stepSize = curve.length /((float)steps); //1
 
         float integral = 0f;
-        for (int i = 0; i < steps; i++)
+        for (int i = 0; i < steps-1; i++)
         {
             float t1 = i * stepSize;
             float t2 = (i + 1) * stepSize;

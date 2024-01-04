@@ -18,17 +18,20 @@ public class Carsmanager : MonoBehaviour
 
 
     List<GameObject> spwarnpoins;
+    List<GameObject> turns;
     List<GameObject> carlist;
     List<GameObject> todelaet;
     public int tospwan = 0;
     public int totalspawn = 0;
 
-
+    GameObject hiddenobjekt;
 
     // Start is called before the first frame update
     void Start()
     {
         spwarnpoins = new List<GameObject>(GameObject.FindGameObjectsWithTag("Carspwarner"));
+        turns = new List<GameObject>(GameObject.FindGameObjectsWithTag("turn"));
+
         todelaet = new List<GameObject>();
         carlist = new List<GameObject>();
     }
@@ -82,6 +85,7 @@ public class Carsmanager : MonoBehaviour
             if (isHiddenOBJ && Barincar.TryGetComponent<NaveNextGoal>(out NaveNextGoal set))
             {
                 set.Hiddenobjek = true;
+                hiddenobjekt = Barincar;
             }
 
                 Barincar.SetActive(true);
@@ -92,6 +96,24 @@ public class Carsmanager : MonoBehaviour
         
     }
 
+    [Button("destroyallcars")]
+    void destroyallcars()
+    {
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject obj = transform.GetChild(i).gameObject;
+
+
+                for (int b = 0; b < obj.transform.childCount; b++)
+                {
+                    Destroy(obj.transform.GetChild(b).gameObject);
+                }
+                Destroy(obj);
+            
+        }
+    }
+
+
     void checkChilden()
     {
        for (int i = transform.childCount - 1; i >= 0; i--)
@@ -100,13 +122,32 @@ public class Carsmanager : MonoBehaviour
         
             if (!obj.activeSelf)
             {
-                Debug.Log("Blob");
                 for (int b = 0; b < obj.transform.childCount; b++)
                 {
-                    Destroy(obj.transform.GetChild(i).gameObject);
+                    Destroy(obj.transform.GetChild(b).gameObject);
                 }
                 Destroy(obj);
             }
         }
+    }
+
+    [Button("Test game mode")]
+    public void creatfield(CarRealtions nextHIDOBJ, Dificulty nextdificulty,int maxcar)
+    {
+        HiddenObjekt = nextHIDOBJ;
+        dificultyObjekt = nextdificulty;
+        tospwan = maxcar;
+
+        destroyallcars();
+        foreach (GameObject obj in spwarnpoins)
+        {
+            if(obj.TryGetComponent<SpwanObjects>(out SpwanObjects sp))
+            {
+                sp.blocked = false;
+            }
+        }
+
+        Spwancar(true);
+
     }
 }

@@ -269,5 +269,7 @@ public class NaveNextGoal : MonoBehaviour
         return isnull;
 
     }
-    
+
+
+
 }

@@ -226,7 +226,7 @@ public class inputmanager : MonoBehaviour
                 if(Clickisdown < maxdilay )
                 {
 
-                    Debug.Log($"GameObjekt sent to check\n{HitGameobjekt.transform.parent.gameObject.GetComponent<NaveNextGoal>().Hiddenobjek}");
+                    Debug.Log($"GameObjekt is :{HitGameobjekt.transform.parent.gameObject.GetComponent<NaveNextGoal>().Hiddenobjek}");
                     HitGameobjekt = null;
                 }
             }
