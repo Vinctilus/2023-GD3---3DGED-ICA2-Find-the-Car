@@ -227,8 +227,8 @@ public class inputmanager : MonoBehaviour
                 if (Clickisdown < maxdilay )
                 {
 
-                    //Debug.Log(HitGameobjekt.transform.parent.gameObject.GetComponent<NaveNextGoal>().Hiddenobjek);
-                    Gamemanager.chechifhasscord(HitGameobjekt.transform.parent.gameObject.GetComponent<NaveNextGoal>().Hiddenobjek);
+                    //Debug.Log(HitGameobjekt.transform.parent.gameObject.GetComponent<CarController>().hiddenObject);
+                    Gamemanager.chechifhasscord(HitGameobjekt.transform.parent.gameObject.GetComponent<CarController>().hiddenObject);
                     HitGameobjekt = null;
                 }
             }

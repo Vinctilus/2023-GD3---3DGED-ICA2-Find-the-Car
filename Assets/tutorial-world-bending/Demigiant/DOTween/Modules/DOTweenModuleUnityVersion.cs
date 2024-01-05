@@ -126,7 +126,7 @@ namespace DG.Tweening
         /// It can be used inside a coroutine as a yield.
         /// <para>Example usage:</para><code>yield return myTween.WaitForElapsedLoops(2);</code>
         /// </summary>
-        /// <param name="elapsedLoops">Elapsed loops to wait for</param>
+        /// <param name="elapsedLoops">Elapsed loops to isWait for</param>
         public static CustomYieldInstruction WaitForElapsedLoops(this Tween t, int elapsedLoops, bool returnCustomYieldInstruction)
         {
             if (!t.active) {
@@ -141,7 +141,7 @@ namespace DG.Tweening
         /// It can be used inside a coroutine as a yield.
         /// <para>Example usage:</para><code>yield return myTween.WaitForPosition(2.5f);</code>
         /// </summary>
-        /// <param name="position">Position (loops included, delays excluded) to wait for</param>
+        /// <param name="position">Position (loops included, delays excluded) to isWait for</param>
         public static CustomYieldInstruction WaitForPosition(this Tween t, float position, bool returnCustomYieldInstruction)
         {
             if (!t.active) {

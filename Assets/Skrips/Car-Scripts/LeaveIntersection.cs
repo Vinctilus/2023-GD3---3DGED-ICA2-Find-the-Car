@@ -8,9 +8,9 @@ public class Nav_leafe_turn : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Car"))
         {
-            if (other.gameObject.TryGetComponent<NaveNextGoal>(out NaveNextGoal b))
+            if (other.gameObject.TryGetComponent<CarController>(out CarController b))
             {
-                b.insection = false;
+                b.isInIntersection = false;
             }
 
         }

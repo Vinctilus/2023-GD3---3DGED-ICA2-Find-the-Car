@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7009014862226381748}
   - component: {fileID: 6861494611274732077}
   m_Layer: 6
-  m_Name: Pathnote
+  m_Name: PathNote
   m_TagString: Corner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

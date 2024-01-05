@@ -123,33 +123,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473f199c5627e6d4e8eb9b4161a38d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rotation4: 0
-  Qlenth: 0
-  Agent: {fileID: 0}
   layerMaskCorner:
     serializedVersion: 2
     m_Bits: 64
   layerMaskCars:
     serializedVersion: 2
     m_Bits: 128
-  layerCarsoff:
+  layerCarsOff:
     serializedVersion: 2
     m_Bits: 256
-  raycastCarslenth: 0
+  raycastCarsLength: 0
   raycastCarsSize: 5
-  stopstrage: {x: 0, y: 0, z: 0}
-  isstopp: 0
-  wait: 0
-  ignorcolision: 0
-  waittime: 0
-  toggelstopp: 0
+  hiddenObject: 0
+  agent: {fileID: 0}
+  goalsLength: 0
+  stopStorage: {x: 0, y: 0, z: 0}
+  toggleStop: 0
+  priority: 0
+  isStop: 0
+  isWait: 0
+  isInIntersection: 0
+  inIntersectionTime: 0
+  lastPathNote: {fileID: 0}
+  lastIntersection: {fileID: 0}
   angleDifference: 0
-  Lastcorner: {fileID: 0}
-  Lasturn: {fileID: 0}
-  Hiddenobjek: 0
-  debugit: 0
-  prio: 0
-  insection: 0
+  ignoreCollision: 0
+  simplifyRotation4: 0
 --- !u!195 &6200651255666643364
 NavMeshAgent:
   m_ObjectHideFlags: 0

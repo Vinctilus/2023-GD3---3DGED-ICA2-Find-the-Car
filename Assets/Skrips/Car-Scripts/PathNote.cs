@@ -110,7 +110,7 @@ public class NavCornercolision : MonoBehaviour
     }
 
 
-    public List<Vector4> getgoal(int a)
+    public List<Vector4> GetGoal(int a)
     {
         if (!IsAKey(a))
         {
@@ -134,9 +134,9 @@ public class NavCornercolision : MonoBehaviour
                 {
                     i++;
 
-                    if (hit.transform.gameObject.TryGetComponent<NaveNextGoal>(out NaveNextGoal setter))
+                    if (hit.transform.gameObject.TryGetComponent<CarController>(out CarController setter))
                     {
-                        if (!setter.ignorcolision && setter.getifitisWating())
+                        if (!setter.ignoreCollision && setter.GetIfItIsWaiting())
                         {
 
                             gothit = true;
@@ -188,9 +188,9 @@ public class NavCornercolision : MonoBehaviour
             {
                 i++;
                 
-                if (hit.transform.gameObject.TryGetComponent<NaveNextGoal>(out NaveNextGoal setter))
+                if (hit.transform.gameObject.TryGetComponent<CarController>(out CarController setter))
                 {
-                    if (!setter.ignorcolision && setter.getifitisWating())
+                    if (!setter.ignoreCollision && setter.GetIfItIsWaiting())
                     {
                         gothit = true;
                         break;
@@ -212,19 +212,19 @@ public class NavCornercolision : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        other.gameObject.GetComponent<NaveNextGoal>().Lastcorner = this;
+        other.gameObject.GetComponent<CarController>().lastPathNote = this;
         if (other.gameObject.CompareTag("Car"))
         {
-            NaveNextGoal setter = other.gameObject.GetComponent<NaveNextGoal>();
+            CarController setter = other.gameObject.GetComponent<CarController>();
             if (setter != null)
             { 
                 if (_dontneedinTurn)
                 {
-                    setter.insertgoale(getgoal(0));
+                    setter.InsertGoals(GetGoal(0));
                 }
                 else
                 {
-                    setter.prio = rendomKey(Random.Range(0, posibile_directios.Count())); ;
+                    setter.priority = rendomKey(Random.Range(0, posibile_directios.Count())); ;
                 }
 
             }

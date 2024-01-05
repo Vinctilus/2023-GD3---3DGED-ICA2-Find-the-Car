@@ -87,9 +87,9 @@ public class TrafficManager : MonoBehaviour
             Visualcar.transform.eulerAngles = Barincar.transform.eulerAngles;
             Visualcar.transform.localPosition = Vector3.zero;
 
-            if (isHiddenOBJ && Barincar.TryGetComponent<NaveNextGoal>(out NaveNextGoal set))
+            if (isHiddenOBJ && Barincar.TryGetComponent<CarController>(out CarController set))
             {
-                set.Hiddenobjek = true;
+                set.hiddenObject = true;
                 hiddenObject = Barincar;
                 cardisplay.changeCar(Visualcar);
             }
