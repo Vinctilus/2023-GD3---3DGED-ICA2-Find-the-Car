@@ -79,7 +79,7 @@ public class AudioManager : MonoBehaviour
     {
         GameObject Player = Instantiate(soundPlayer, tr.position, tr.rotation);
         Player.transform.parent = gameObject.transform;
-        Player.GetComponent<playaudio>().play(copy, clip, posioedsound);
+        Player.GetComponent<PlayAudio>().Play(copy, clip, posioedsound);
     }
 }   
 

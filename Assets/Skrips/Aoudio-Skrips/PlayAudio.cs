@@ -4,18 +4,17 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 
-public class playaudio : MonoBehaviour
+public class PlayAudio : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    // Start is called before the first frame update
+    
     void Awake()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-   
-    // Update is called once per frame
+
     void Update(){
         if (!audioSource.isPlaying)    {
 
@@ -25,12 +24,15 @@ public class playaudio : MonoBehaviour
 
     }
 
-    public void play(AudioSource copy, AudioClip play, bool Posionsound)
+    public void Play(AudioSource copy, AudioClip clipToPlay, bool isPositionalSound)
     {
         audioSource.outputAudioMixerGroup = copy.outputAudioMixerGroup; 
-        audioSource.clip = play;
+        audioSource.clip = clipToPlay;
         audioSource.Play();
-        if( Posionsound ) { audioSource.spatialBlend = 1.0f; }
+        if( isPositionalSound ) 
+        { 
+            audioSource.spatialBlend = 1.0f; 
+        }
 }
 
 }
