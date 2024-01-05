@@ -190,9 +190,9 @@ public class inputmanager : MonoBehaviour
 
     Vector3 VectorLimit(Vector3 v)
     {
-        roundlimt(ref v.x, minBoader.x, maxBoader.x);
+        keeplimit(ref v.x, minBoader.x, maxBoader.x);
         keeplimit(ref v.y,minBoader.y,maxBoader.y);
-        roundlimt(ref v.z, minBoader.z, maxBoader.z);
+        keeplimit(ref v.z, minBoader.z, maxBoader.z);
         return v;
     }
 

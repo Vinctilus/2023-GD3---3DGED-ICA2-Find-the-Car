@@ -1,0 +1,24 @@
+Banding world Shader
+https://www.youtube.com/watch?v=SOK3Ias5Nk0
+https://github.com/notslot/tutorial-world-bending
+Sample from AI NAVE UNITY
+
+Controler
+Touch control Move Pinch and Zoom 
+https://www.youtube.com/watch?v=K_aAnBn5khA
+
+Sounds
+by Pixabay:
+https://pixabay.com/de/sound-effects/11-minutes-of-city-sounds-6736/
+https://pixabay.com/de/sound-effects/car-horn-6408/
+https://pixabay.com/de/sound-effects/bus-94441/
+https://pixabay.com/de/sound-effects/traffic-medium-city-dry-road-xy-90-degrees-recordingwav-14600/
+https://pixabay.com/de/sound-effects/car-passing-and-birds-chirping-in-the-background-94400/
+https://pixabay.com/de/sound-effects/car-alarm-raw-43056/
+https://pixabay.com/de/sound-effects/wrong-47985/
+by floraphonic:
+https://pixabay.com/de/sound-effects/copper-bell-ding-3-172687/
+by SoundsForYou:
+https://pixabay.com/de/sound-effects/notifications-sound-127856/
+by Monument_Music:
+https://pixabay.com/de/music/schlagt-city-lights-chill-lo-fi-176145/

@@ -20,10 +20,10 @@ public class Carsmanager : MonoBehaviour
 
 
 
-    List<GameObject> spwarnpoins;
-    List<GameObject> turns;
-    List<GameObject> carlist;
-    List<GameObject> todelaet;
+    public List<GameObject> spwarnpoins;
+    public List<GameObject> turns;
+    public List<GameObject> carlist;
+    public List<GameObject> todelaet;
     public int tospwan = 0;
     public int totalspawn = 0;
 

@@ -28,6 +28,11 @@ public class Menuclick : MonoBehaviour
         gamemanager.gotoSetting();
     }
 
+    public void CloseSettings()
+    {
+        gamemanager.exitSetting();
+    }
+
     public void ExitGame()
     {
         Debug.Log("EXIT GAME");

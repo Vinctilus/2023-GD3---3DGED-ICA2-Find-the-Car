@@ -15,6 +15,7 @@ public class gameloic : MonoBehaviour
     public GameObject InGame;
     public GameObject Pause;
     public GameObject End;
+    public GameObject Setting;
     [Description("Gameobjecs")]
     public Carsmanager carmanager;
     public List<CarRealtions> Cars;
@@ -27,6 +28,9 @@ public class gameloic : MonoBehaviour
     public int highscore = 0;
 
     public inputmanager controls;
+
+    [Description("Audio")]
+    public aoudiomanager audio;
 
 
     // Start is called before the first frame update
@@ -66,11 +70,14 @@ public class gameloic : MonoBehaviour
 
     public void gotoSetting()
     {
-        Debug.Log("settings");
+       
+        Setting.SetActive(true);
+
     }
     public void exitSetting()
     {
-
+        
+        Setting.SetActive(false);
     }
 
     public void gotoEnd()
@@ -115,10 +122,12 @@ public class gameloic : MonoBehaviour
             timeleft += timeplus;
             timeleft = Mathf.Min(timeleft,MAXTIME);
             nextlevle();
+            audio.playSFX(audio.Correct);
         }
         else
         {
             timeleft -= timeminus;
+            audio.playSFX(audio.Worrng);
         }
     }
 }
