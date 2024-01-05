@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] 
     GameObject soundPlayer;
     [SerializeField]
-    Carsmanager carsManager;
+    TrafficManager carsManager;
 
     [Header("Resurecs")]
     public AudioClip musicTrack;

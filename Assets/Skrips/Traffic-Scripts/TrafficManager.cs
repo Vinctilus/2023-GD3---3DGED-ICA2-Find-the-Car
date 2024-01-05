@@ -5,55 +5,54 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Spwanmanger", menuName = "Manager/Spwanmanger", order = 1)]
-public class Carsmanager : MonoBehaviour
+public class TrafficManager : MonoBehaviour
 {
-    
 
+    [Header("Get from GameManager")]
     [SerializeField]
-    public CarRealtions HiddenObjekt;
+    public CarRelationConnections carRelationObject;
     [SerializeField]
-    public Dificulty dificultyObjekt;
-    [SerializeField]
-    GameObject car;
-    [SerializeField]
-    GameObject repesentativ;
+    public DifficultyCurve difficultyObject;
 
-
-
-    public List<GameObject> spwarnpoins;
-    public List<GameObject> turns;
-    public List<GameObject> carlist;
-    public List<GameObject> todelaet;
-    public int tospwan = 0;
-    public int totalspawn = 0;
-
+    [Header("Prefabs")]
     [SerializeField]
-    GameObject hiddenobjekt;
+    GameObject carControllerPrefab;
+
+    [Header("Display Car")]
     [SerializeField]
     Displaycar cardisplay;
+
+
+    [Header("Systems")]
+    public List<GameObject> spwarnpoinsList;
+    public List<GameObject> intersectionsList;
+    public int maxCarsToSpawn = 0;
+    public int totalCarsCount = 0;
+
+    [Header("Actual Object to Search")]
+    [SerializeField]
+    GameObject hiddenObject;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        spwarnpoins = new List<GameObject>(GameObject.FindGameObjectsWithTag("Carspwarner"));
-        turns = new List<GameObject>(GameObject.FindGameObjectsWithTag("turn"));
-
-        todelaet = new List<GameObject>();
-        carlist = new List<GameObject>();
+        spwarnpoinsList = new List<GameObject>(GameObject.FindGameObjectsWithTag("Carspwarner"));
+        intersectionsList = new List<GameObject>(GameObject.FindGameObjectsWithTag("turn"));
     }
 
     // Update is called once per frame
     void Update()
     {
-       totalspawn = transform.childCount;
+       totalCarsCount = transform.childCount;
        checkChilden();
-        if (transform.childCount < tospwan)
+        if (transform.childCount < maxCarsToSpawn)
         {
-            for (int sp = tospwan; transform.childCount < tospwan && sp > 0; sp--) 
+            for (int sp = maxCarsToSpawn; transform.childCount < maxCarsToSpawn && sp > 0; sp--) 
             { 
                 Spwancar(); 
             }
-            tospwan = transform.childCount;
+            maxCarsToSpawn = transform.childCount;
         }
     }
     [Button("Spwancar")]
@@ -61,19 +60,19 @@ public class Carsmanager : MonoBehaviour
     {
         Transform getposion =null;
         GameObject VisalCartospwan = null;
-        int random = Random.Range(0, spwarnpoins.Count-1);
+        int random = Random.Range(0, spwarnpoinsList.Count-1);
         if (isHiddenOBJ) 
         {
-            VisalCartospwan = HiddenObjekt.hiddenobjekt; 
+            VisalCartospwan = carRelationObject.hiddenobjekt; 
         }
         else
         {
-             VisalCartospwan = HiddenObjekt.getrendom(dificultyObjekt.curve);
+             VisalCartospwan = carRelationObject.GetRandom(difficultyObject.curve);
         }
         for (int i = 0; getposion == null&&i<10;i++)
         {
             
-            try{ getposion = spwarnpoins[(random+i)%spwarnpoins.Count].GetComponent<SpwanObjects>().spwancar(); }
+            try{ getposion = spwarnpoinsList[(random+i)%spwarnpoinsList.Count].GetComponent<CheckCarPlacement>().spwancar(); }
             catch(System.Exception ex) { Debug.Log(ex); };
 
 
@@ -81,7 +80,7 @@ public class Carsmanager : MonoBehaviour
         }
         if(getposion != null)
         {
-            GameObject Barincar = Instantiate(car, getposion.position, getposion.rotation);
+            GameObject Barincar = Instantiate(carControllerPrefab, getposion.position, getposion.rotation);
             GameObject Visualcar = Instantiate(VisalCartospwan);
             Barincar.transform.parent= transform;
             Visualcar.transform.parent = Barincar.transform;
@@ -91,7 +90,7 @@ public class Carsmanager : MonoBehaviour
             if (isHiddenOBJ && Barincar.TryGetComponent<NaveNextGoal>(out NaveNextGoal set))
             {
                 set.Hiddenobjek = true;
-                hiddenobjekt = Barincar;
+                hiddenObject = Barincar;
                 cardisplay.changeCar(Visualcar);
             }
 
@@ -139,18 +138,18 @@ public class Carsmanager : MonoBehaviour
     }
 
     [Button("Test game mode")]
-    public void creatfield(CarRealtions nextHIDOBJ, Dificulty nextdificulty,int maxcar)
+    public void creatfield(CarRelationConnections nextHIDOBJ, DifficultyCurve nextdificulty,int maxcar)
     {
-        HiddenObjekt = nextHIDOBJ;
-        dificultyObjekt = nextdificulty;
-        tospwan = maxcar;
+        carRelationObject = nextHIDOBJ;
+        difficultyObject = nextdificulty;
+        maxCarsToSpawn = maxcar;
 
         destroyallcars();
-        foreach (GameObject obj in spwarnpoins)
+        foreach (GameObject obj in spwarnpoinsList)
         {
-            if(obj.TryGetComponent<SpwanObjects>(out SpwanObjects sp))
+            if(obj.TryGetComponent<CheckCarPlacement>(out CheckCarPlacement sp))
             {
-                sp.blocked = false;
+                sp.isBlocked = false;
             }
         }
 

@@ -5,14 +5,21 @@ using UnityEngine;
 using UnityEngine.WSA;
 
 
-[CreateAssetMenu(fileName = "Car-", menuName = "ScriptableObjects/CarRealtions", order = 1)]
-public class CarRealtions : ScriptableObject
+[CreateAssetMenu(fileName = "Car-", menuName = "ScriptableObjects/CarRelationConnections", order = 1)]
+public class CarRelationConnections : ScriptableObject
 {
+    [Header("Car")]
     [SerializeField]
     public GameObject hiddenobjekt;
+    [Header("List from Similar to Unsimilar")]
     [SerializeField]
     public List<GameObject> Raltionlist = new List<GameObject>();
-    public GameObject getrendom(AnimationCurve curve)
+
+    // This is a Random Algorithm that depends on a Curve.
+    // It uses the Volume under the Curve for the Possibility
+    // of the Index.
+    // The sum would be enough for the approximation, but I built it with the Volume.
+    public GameObject GetRandom(AnimationCurve curve)
     {
        List<float>Areas = new List<float>();
        int steps = Raltionlist.Count;

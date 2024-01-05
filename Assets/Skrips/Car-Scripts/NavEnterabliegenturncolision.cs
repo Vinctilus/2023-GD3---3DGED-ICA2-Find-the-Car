@@ -235,7 +235,7 @@ public class NavEnterTorunColision : MonoBehaviour
                     Destroy(car);
                    
                     #region todo
-                    //send spwarn logig spwan new car
+                    //send spwarn logig spwan new carControllerPrefab
                     //!
                     //!
                     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

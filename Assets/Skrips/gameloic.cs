@@ -17,9 +17,9 @@ public class gameloic : MonoBehaviour
     public GameObject End;
     public GameObject Setting;
     [Header("Gameobjecs")]
-    public Carsmanager carmanager;
-    public List<CarRealtions> Cars;
-    public List<Dificulty> Dificultys;
+    public TrafficManager carmanager;
+    public List<CarRelationConnections> Cars;
+    public List<DifficultyCurve> Dificultys;
 
     [Header("Socre")]
     public float timeplus = 0;

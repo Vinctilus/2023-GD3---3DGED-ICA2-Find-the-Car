@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3298572498426103776}
   - component: {fileID: 5279660311365382024}
   m_Layer: 0
-  m_Name: spwan_car
+  m_Name: CarSpawnPosition
   m_TagString: Carspwarner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43185b00e92ee5646bde9a9fe8ccc488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaskCarLayer:
+  carLayerMask:
     serializedVersion: 2
     m_Bits: 896
-  Debugqube: {fileID: 6300861770865916039, guid: f0ed30bc626924740a81fbed1c2191a5, type: 3}
+  isBlocked: 0
+  doNotSpawnInDistance: 16

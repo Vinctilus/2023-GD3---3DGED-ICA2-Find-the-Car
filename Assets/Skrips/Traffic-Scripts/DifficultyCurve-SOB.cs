@@ -4,8 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.WSA;
 
-[CreateAssetMenu(fileName = "Dificulty", menuName = "Pettern/Dificulty", order = 1)]
-public class Dificulty : ScriptableObject
+[CreateAssetMenu(fileName = "DifficultyCurve", menuName = "Pettern/DifficultyCurve", order = 1)]
+public class DifficultyCurve : ScriptableObject
 {
     [SerializeField]
     public AnimationCurve curve;

@@ -83,7 +83,7 @@ public class inputmanager : MonoBehaviour
 
         spheremanager.bendingAmount = Mathf.Max(0, (benitigrange * 1/ (maxBoader.y - minBoader.y) * (camera.transform.position.y - minBoader.y))- benitingoffest);
 
-        //seltion of car
+        //seltion of carControllerPrefab
         selection();
 
     }
