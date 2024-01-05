@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Spwanmanger", menuName = "Manager/Spwanmanger", order = 1)]
+
 public class TrafficManager : MonoBehaviour
 {
 
@@ -143,7 +143,13 @@ public class TrafficManager : MonoBehaviour
         carRelationObject = nextHIDOBJ;
         difficultyObject = nextdificulty;
         maxCarsToSpawn = maxcar;
-
+        foreach (var obj in intersectionsList)
+        {
+            if(obj.TryGetComponent<IntersectionManager>(out IntersectionManager intersection))
+            {
+                intersection.BySpwanNew();
+            }
+        }
         destroyallcars();
         foreach (GameObject obj in spwarnpoinsList)
         {

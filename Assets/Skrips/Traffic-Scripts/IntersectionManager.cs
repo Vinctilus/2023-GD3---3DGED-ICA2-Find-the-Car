@@ -66,6 +66,8 @@ public class IntersectionManager : MonoBehaviour
 
     private void Update()
     {
+        carInsideList.RemoveAll(objekt => objekt == null);
+       
         simplifyRotation4 = ShortRotation(lastRotation);
 
         if (carQueues.Count > 0)
@@ -201,5 +203,12 @@ public class IntersectionManager : MonoBehaviour
     private int ShortRotation(float a)
     {
         return (int)Mathf.Round(a / 90);
+    }
+
+    public void BySpwanNew()
+    { 
+        carInsideList.Clear();
+        carCountInside = 0;
+        lastPriority= -1;
     }
 }

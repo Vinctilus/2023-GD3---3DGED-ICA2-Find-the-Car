@@ -109,7 +109,6 @@ public class CarController : MonoBehaviour
             if (inIntersectionTime >= 10)
             {
                 lastIntersection.ByFullIntersection();
-                inIntersectionTime = 0;
             }
         }
         else

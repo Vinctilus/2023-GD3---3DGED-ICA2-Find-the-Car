@@ -31,7 +31,6 @@ public class CheckCarPlacement : MonoBehaviour
 
     public Transform spwancar()
     {
-        RaycastHit hit;
         Transform data = null;
         bool hitnothing = true;
      
