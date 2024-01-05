@@ -3,33 +3,36 @@ using System.Collections.Generic;
 using TreeEditor;
 using UnityEngine;
 
-public class Displaycar : MonoBehaviour
+public class DisplayCar : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField]
-    float timeforfullRotation = 5;
-    float timepast = 0;
-
-    GameObject Car;
+    float timeForFullRotation = 15;
+    [Header("Debug")]
+    [SerializeField]
+    float timePast = 0;
+    [SerializeField]
+    GameObject car;
     void Update()
     {
-        timepast += Time.deltaTime;
-        if(timepast > timeforfullRotation)
+        timePast += Time.deltaTime;
+        if(timePast > timeForFullRotation)
         {
-            timepast -= timeforfullRotation;
+            timePast -= timeForFullRotation;
             
         }
-        transform.eulerAngles = new Vector3(0, 360 / timeforfullRotation * timepast, 0);
+        transform.eulerAngles = new Vector3(0, 360 / timeForFullRotation * timePast, 0);
     }
 
-    public void changeCar(GameObject newcar)
+    public void ChangeCar(GameObject newcar)
     {
         for (int b = 0; b < transform.childCount; b++)
         {
             Destroy(transform.GetChild(b).gameObject);
         }
 
-        Car = Instantiate(newcar, transform.position, transform.rotation);
-        Car.transform.parent = transform;
+        car = Instantiate(newcar, transform.position, transform.rotation);
+        car.transform.parent = transform;
        
 
     }

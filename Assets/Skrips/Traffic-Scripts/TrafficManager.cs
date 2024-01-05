@@ -20,7 +20,7 @@ public class TrafficManager : MonoBehaviour
 
     [Header("Display Car")]
     [SerializeField]
-    Displaycar cardisplay;
+    DisplayCar cardisplay;
 
 
     [Header("Systems")]
@@ -91,7 +91,7 @@ public class TrafficManager : MonoBehaviour
             {
                 set.hiddenObject = true;
                 hiddenObject = Barincar;
-                cardisplay.changeCar(Visualcar);
+                cardisplay.ChangeCar(Visualcar);
             }
 
                 Barincar.SetActive(true);

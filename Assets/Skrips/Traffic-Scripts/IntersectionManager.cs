@@ -206,7 +206,8 @@ public class IntersectionManager : MonoBehaviour
     }
 
     public void BySpwanNew()
-    { 
+    {
+        carQueues.Clear();
         carInsideList.Clear();
         carCountInside = 0;
         lastPriority= -1;
