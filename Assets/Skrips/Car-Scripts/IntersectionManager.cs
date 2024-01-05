@@ -5,7 +5,7 @@ using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class NavEnterTorunColision : MonoBehaviour
+public class IntersectionManager : MonoBehaviour
 {
     [Header("Debug")]
     public SortedDictionary<int, Queue<GameObject>> carQueues = new SortedDictionary<int, Queue<GameObject>>();

@@ -141,20 +141,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561d2cce76ab03d4797431bd4fb91411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dontneedinTurn: 0
-  _straight: 0
-  _right: 0
-  _left: 0
-  layerMask:
+  dontNeedInTurn: 0
+  straight: 0
+  right: 0
+  left: 0
+  layerMaskPathNote:
     serializedVersion: 2
     m_Bits: 64
   layerMaskCars:
     serializedVersion: 2
     m_Bits: 128
-  _straightV: {x: 0, y: 0, z: 0, w: 0}
-  _rightV: {x: 0, y: 0, z: 0, w: 0}
-  _leftV: {x: 0, y: 0, z: 0, w: 0}
-  cubePrefab: {fileID: 6300861770865916039, guid: f0ed30bc626924740a81fbed1c2191a5, type: 3}
+  straightV: {x: 0, y: 0, z: 0, w: 0}
+  rightV: {x: 0, y: 0, z: 0, w: 0}
+  leftV: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &6861494611274732077
 Rigidbody:
   m_ObjectHideFlags: 0

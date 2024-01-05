@@ -51,8 +51,8 @@ public class CarController : MonoBehaviour
     [SerializeField]
     public float inIntersectionTime = 0;
     [SerializeField]
-    public NavCornercolision lastPathNote;
-    public NavEnterTorunColision lastIntersection;
+    public PathNote lastPathNote;
+    public IntersectionManager lastIntersection;
     [Header("Collision Detection")]
     [SerializeField]
     float angleDifference;
@@ -156,7 +156,7 @@ public class CarController : MonoBehaviour
                             min = -100; max = 0; break;
 
                         case 2:
-                            min = 0; max = 100; break;
+                            min = 0; max = 85; break;
 
                         default:
                             min = -75; max = 75; break;
