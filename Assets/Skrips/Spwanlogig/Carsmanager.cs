@@ -15,6 +15,9 @@ public class Carsmanager : MonoBehaviour
     public Dificulty dificultyObjekt;
     [SerializeField]
     GameObject car;
+    [SerializeField]
+    GameObject repesentativ;
+
 
 
     List<GameObject> spwarnpoins;
@@ -24,7 +27,10 @@ public class Carsmanager : MonoBehaviour
     public int tospwan = 0;
     public int totalspawn = 0;
 
+    [SerializeField]
     GameObject hiddenobjekt;
+    [SerializeField]
+    Displaycar cardisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +92,7 @@ public class Carsmanager : MonoBehaviour
             {
                 set.Hiddenobjek = true;
                 hiddenobjekt = Barincar;
+                cardisplay.changeCar(Visualcar);
             }
 
                 Barincar.SetActive(true);
@@ -149,5 +156,15 @@ public class Carsmanager : MonoBehaviour
 
         Spwancar(true);
 
+    }
+
+
+    public void carssetactive(bool aktiv)
+    {
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject obj = transform.GetChild(i).gameObject;
+            obj.SetActive(aktiv);
+        }
     }
 }

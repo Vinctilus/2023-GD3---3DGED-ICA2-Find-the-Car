@@ -11,7 +11,7 @@ public class inputmanager : MonoBehaviour
     GameObject camera;
 
     [SerializeField]
-    GameObject Gamemanager;
+    gameloic Gamemanager;
 
     [SerializeField]
     public AnimationCurve SpeedCurve;
@@ -56,8 +56,6 @@ public class inputmanager : MonoBehaviour
 
     //Selection
     [SerializeField]
-    public bool CanClickOnCar = false;
-    [SerializeField]
     LayerMask layerMaskVisualCars;
     [SerializeField]
     float Clickisdown =0;
@@ -68,7 +66,7 @@ public class inputmanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //enabled = false;
+        enabled = false;
         curveworld = Sphermanager.GetComponent<rolleffect>();
     }
 
@@ -201,8 +199,9 @@ public class inputmanager : MonoBehaviour
 
     void selection()
     {
-        if (CanClickOnCar && !deathzoneaktive)
+        if (!deathzoneaktive)
         {
+            
             if (Input.GetMouseButtonDown(0))
             {
                 Clickisdown = 0;
@@ -221,12 +220,15 @@ public class inputmanager : MonoBehaviour
                 Clickisdown += Time.deltaTime;
                 isdown = true;
             }
+
             if (!isdown && HitGameobjekt != null)
             {
-                if(Clickisdown < maxdilay )
+                Debug.Log(HitGameobjekt != null);
+                if (Clickisdown < maxdilay )
                 {
 
-                    Debug.Log($"GameObjekt is :{HitGameobjekt.transform.parent.gameObject.GetComponent<NaveNextGoal>().Hiddenobjek}");
+                    //Debug.Log(HitGameobjekt.transform.parent.gameObject.GetComponent<NaveNextGoal>().Hiddenobjek);
+                    Gamemanager.chechifhasscord(HitGameobjekt.transform.parent.gameObject.GetComponent<NaveNextGoal>().Hiddenobjek);
                     HitGameobjekt = null;
                 }
             }

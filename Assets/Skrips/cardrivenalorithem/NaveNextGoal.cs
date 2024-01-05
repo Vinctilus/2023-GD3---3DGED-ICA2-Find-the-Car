@@ -181,7 +181,8 @@ public class NaveNextGoal : MonoBehaviour
                 {
 
                     Agent.enabled = true;
-                    if (Agent.enabled) { Agent.destination = stopstrage; }
+                    try{ Agent.destination = stopstrage; }
+                    catch { }
                    
                     toggelstopp = false;
                 }

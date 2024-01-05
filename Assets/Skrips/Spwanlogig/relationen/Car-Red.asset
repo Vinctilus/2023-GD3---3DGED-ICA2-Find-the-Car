@@ -15,7 +15,6 @@ MonoBehaviour:
   hiddenobjekt: {fileID: 1313262146895927380, guid: 49ce51e4647a6534e9d2c267bc320c8f, type: 3}
   Raltionlist:
   - {fileID: 3474269159079077734, guid: 29f6a14d155ae0f4b98a9f58285611eb, type: 3}
-  - {fileID: 1313262146895927380, guid: 49ce51e4647a6534e9d2c267bc320c8f, type: 3}
   - {fileID: 8369412260619221354, guid: 2d428fdd8a7ef794cb78daf4471dfbf7, type: 3}
   - {fileID: 5675303911386181876, guid: f281129dcbe87d84b9866d34a09c1e8d, type: 3}
   - {fileID: 7148684485998625149, guid: 3647c52567ed56b4cbaad5aad5e26d5d, type: 3}
