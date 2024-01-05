@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 [ExecuteAlways]
-public class rolleffect : MonoBehaviour
+public class SphereManager : MonoBehaviour
 {
     #region Constants
 

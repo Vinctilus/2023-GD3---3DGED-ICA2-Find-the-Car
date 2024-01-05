@@ -46,13 +46,14 @@ public class inputmanager : MonoBehaviour
     [SerializeField]
     Vector3 maxBoader;
 
+
     [SerializeField]
-    GameObject Sphermanager;
+    SphereManager spheremanager;
     [SerializeField]
     float benitigrange = 0.1f;
     [SerializeField]
     float benitingoffest = 0.05f;
-    rolleffect curveworld;
+    
 
     //Selection
     [SerializeField]
@@ -67,7 +68,6 @@ public class inputmanager : MonoBehaviour
     void Start()
     {
         enabled = false;
-        curveworld = Sphermanager.GetComponent<rolleffect>();
     }
 
     // Update is called once per frame
@@ -81,7 +81,7 @@ public class inputmanager : MonoBehaviour
         Vector3 nexpositon = camera.transform.position + keyinput + touchinput;
         camera.transform.position = VectorLimit(nexpositon);
 
-        curveworld.bendingAmount = Mathf.Max(0, (benitigrange * 1/ (maxBoader.y - minBoader.y) * (camera.transform.position.y - minBoader.y))- benitingoffest);
+        spheremanager.bendingAmount = Mathf.Max(0, (benitigrange * 1/ (maxBoader.y - minBoader.y) * (camera.transform.position.y - minBoader.y))- benitingoffest);
 
         //seltion of car
         selection();
@@ -223,7 +223,7 @@ public class inputmanager : MonoBehaviour
 
             if (!isdown && HitGameobjekt != null)
             {
-                Debug.Log(HitGameobjekt != null);
+                
                 if (Clickisdown < maxdilay )
                 {
 

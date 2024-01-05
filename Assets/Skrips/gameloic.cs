@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class gameloic : MonoBehaviour
 {
-    [Description("UI")]
+    [Header("UI")]
     public float timeleft;
     public float MAXTIME;
     public GameObject AvieUI;
@@ -16,12 +16,12 @@ public class gameloic : MonoBehaviour
     public GameObject Pause;
     public GameObject End;
     public GameObject Setting;
-    [Description("Gameobjecs")]
+    [Header("Gameobjecs")]
     public Carsmanager carmanager;
     public List<CarRealtions> Cars;
     public List<Dificulty> Dificultys;
 
-    [Description("Socre")]
+    [Header("Socre")]
     public float timeplus = 0;
     public float timeminus = 0;
     public int score = 0;
@@ -29,8 +29,8 @@ public class gameloic : MonoBehaviour
 
     public inputmanager controls;
 
-    [Description("Audio")]
-    public aoudiomanager audio;
+    [Header("Audio")]
+    public AudioManager Audiomanger;
 
 
     // Start is called before the first frame update
@@ -122,12 +122,12 @@ public class gameloic : MonoBehaviour
             timeleft += timeplus;
             timeleft = Mathf.Min(timeleft,MAXTIME);
             nextlevle();
-            audio.playSFX(audio.Correct);
+            Audiomanger.playSFX(Audiomanger.correctSound);
         }
         else
         {
             timeleft -= timeminus;
-            audio.playSFX(audio.Worrng);
+            Audiomanger.playSFX(Audiomanger.wrongSound);
         }
     }
 }

@@ -26,7 +26,7 @@ public class aodiosettings : MonoBehaviour
     }
     public void setMusicVolume() 
     {
-        setVolume("Music", MusicSlider.value);
+        setVolume("musicTrack", MusicSlider.value);
     }
     public void setAbientVolume() 
     {
@@ -47,7 +47,7 @@ public class aodiosettings : MonoBehaviour
     {
         
         MaserSlider.value = haskey("Master",0.5f);
-        MusicSlider.value = haskey("Music");
+        MusicSlider.value = haskey("musicTrack");
         AbientSlider.value = haskey("Abiente");
         SFXSlider.value = haskey("SFX");
 
