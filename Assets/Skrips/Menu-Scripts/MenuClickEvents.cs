@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Menuclick : MonoBehaviour
+public class MenuClickEvents : MonoBehaviour
 {
+    [Header("GameManager")]
     [SerializeField]
     gameloic gamemanager;
 
@@ -35,7 +36,7 @@ public class Menuclick : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("EXIT GAME");
+        Application.Quit();
     }
 
 

@@ -4,18 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIendresuolt : MonoBehaviour
+public class UIInGameScreen : MonoBehaviour
 {
+    [Header("GameManager")]
     [SerializeField]
     gameloic loc;
-    public TextMeshProUGUI highscore;
+    [Header("Text Fields")]
+    public TextMeshProUGUI timer;
     public TextMeshProUGUI score;
 
     void Update()
     {
+       
+        timer.SetText($"{((int)loc.timeleft) / 60}:"+ ($"{((int)loc.timeleft) % 60}").PadLeft(2, '0'));
         score.SetText(($"{loc.score}").PadLeft(8, '0'));
-        highscore.SetText(($"{PlayerPrefs.GetInt("Hiscore")}").PadLeft(8, '0'));
-
-
     }
 }
