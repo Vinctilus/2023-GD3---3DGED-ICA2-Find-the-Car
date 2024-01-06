@@ -9,7 +9,8 @@ WASD and arrow keys to move around.
 Mouse/Touch to select a car.
 
 MouseWheel/Touch (Pinch and Zoom) to zoom in and out.
-
+## Use of AI
+This project was created with the help of ChatGPT as documentation. Only the specifically named scripts are generated. ChatGPT helped me with spelling and debugging problems. The experience was more like using Google, but ChatGPT is often faster and more precise than Google results. So, I used ChatGPT as a smart booklet and compiler explainer. I am delighted to answer all your questions about my progress. Only third-party maintenance is generated code!
 
 ## This project contains third-party assets.
 
