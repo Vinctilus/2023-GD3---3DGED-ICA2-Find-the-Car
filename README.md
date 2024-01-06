@@ -3,14 +3,19 @@
 Is a third-person top-down point-and-click high-score game.
 
 Controls: You can use the mouse and keyboard, but if you have a touchscreen, you can use it too.
+
 WASD and arrow keys to move around.
+
 Mouse/Touch to select a car.
+
 MouseWheel/Touch (Pinch and Zoom) to zoom in and out.
 
-This project contains third-party assets.
+
+## This project contains third-party assets.
+
 All assets were acquired in January 2024.
 
-## Scripts Used / Inspired
+### Scripts Used / Inspired
 Touch Controls: Move, Pinch, and Zoom
 YouTube:
 - https://www.youtube.com/watch?v=K_aAnBn5khA
@@ -35,7 +40,7 @@ GitHub:
   
 world_bending_manager (complete, lines 0-108).
 
-## Only Assets
+### Assets
 City and Cars Assets:
 SimplePoly City Low Poly Assets
 - https://assetstore.unity.com/packages/p/simplepoly-city-low-poly-assets-58899
