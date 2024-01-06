@@ -8,7 +8,7 @@ public class UIEndScreen : MonoBehaviour
 {
     [Header("GameManager")]
     [SerializeField]
-    GameLogic gamemanager;
+    GameManager gamemanager;
     [Header("Text Fields")]
     public TextMeshProUGUI highscoreText;
     public TextMeshProUGUI scoreText;

@@ -8,7 +8,7 @@ public class MenuClickEvents : MonoBehaviour
 {
     [Header("GameManager")]
     [SerializeField]
-    GameLogic gamemanager;
+    GameManager gamemanager;
 
     public void StartGame()
     {

@@ -8,7 +8,7 @@ public class UIInGameScreen : MonoBehaviour
 {
     [Header("GameManager")]
     [SerializeField]
-    GameLogic loc;
+    GameManager loc;
     [Header("Text Fields")]
     public TextMeshProUGUI timer;
     public TextMeshProUGUI score;

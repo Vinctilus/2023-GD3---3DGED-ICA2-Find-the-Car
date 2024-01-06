@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-public class GameLogic : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [Header("UI")]
     public float timeLeft;

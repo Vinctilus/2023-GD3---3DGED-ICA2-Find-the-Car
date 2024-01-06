@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour
 
     [Header("GameManager")]
     [SerializeField]
-    GameLogic gamemanager;
+    GameManager gamemanager;
 
     [Header("Keyboard Controls")]
     [SerializeField]
