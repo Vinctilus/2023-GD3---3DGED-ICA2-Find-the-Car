@@ -132,6 +132,7 @@ MonoBehaviour:
   layerCarsOff:
     serializedVersion: 2
     m_Bits: 256
+  trafficmanager: {fileID: 0}
   raycastCarsLength: 0
   raycastCarsSize: 5
   hiddenObject: 0

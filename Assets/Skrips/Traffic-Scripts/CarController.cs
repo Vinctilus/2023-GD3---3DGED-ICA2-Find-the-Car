@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 using UnityEngine.AI;
 using UnityEngine.ProBuilder.Shapes;
 using System.Linq;
+using TMPro;
+using Unity.Burst.CompilerServices;
 
 public class CarController : MonoBehaviour
 {
@@ -16,6 +18,10 @@ public class CarController : MonoBehaviour
     LayerMask layerMaskCars;
     [SerializeField]
     LayerMask layerCarsOff;
+    [Header("TrafficManager")]
+    //Get set from TrafficManager themself
+    [HideInInspector]
+    public TrafficManager trafficmanager;
 
     [Header("Settings")]
 
@@ -100,7 +106,7 @@ public class CarController : MonoBehaviour
         if (goals.Count == 1 && ignoreCollision)
         {
             ignoreCollision = false;
-            gameObject.layer = LayerMask.NameToLayer("Cars");
+            gameObject.layer = LayerMask.NameToLayer("cars");
         }
 
         if (GetIfItIsWaiting() && isInIntersection)
@@ -182,11 +188,26 @@ public class CarController : MonoBehaviour
                 else
                 {
                     agent.enabled = true;
-                    try
+                    NavMeshHit hit;
+                    if (NavMesh.SamplePosition(stopStorage, out hit, 1.0f, NavMesh.AllAreas))
                     {
-                        agent.destination = stopStorage;
+                        agent.SetDestination(stopStorage);
+                    }else
+                    {
+                        if (hiddenObject)
+                        {
+                            trafficmanager.SpwanHiddenCarNew();
+                        }
+
+                        for(int i = 0; i < transform.childCount; i++)
+                        {
+                            Destroy(transform.GetChild(i).gameObject);
+                        }
+                        Debug.LogWarning("Accept: that Posion dossen macth Nav");
+                        Destroy(gameObject);
+
                     }
-                    catch { }
+                    
 
                     toggleStop = false;
                 }

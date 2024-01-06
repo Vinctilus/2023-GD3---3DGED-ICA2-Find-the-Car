@@ -52,30 +52,30 @@ public class AudioManager : MonoBehaviour
 
         randomTimeElapsed = randomTimeElapsed+Time.deltaTime;
         if (randomTimeElapsed > randomTime) {
-            playrandomBKG();
+            PlayRandomBackground();
             randomTimeElapsed = 0;
             randomTime = Random.Range(minRandomTime, maxRandomTime);
         }
 
     }
 
-    [Button("playSFX")]
-    public void playSFX(AudioClip clip)
+    [Button("PlaySFX")]
+    public void PlaySFX(AudioClip clip)
     {
-        creatplayer(sfxVolume, clip, transform,false);
+        CreatePlayer(sfxVolume, clip, transform,false);
     }
 
 
     [Button("Redomesonde")]
-    public void playrandomBKG()
+    public void PlayRandomBackground()
     {
         GameObject obj = carsManager.transform.GetChild(Random.Range(0,carsManager.transform.childCount-1)).gameObject;
         Transform tr =  obj.transform;
         AudioClip clip = streetSounds[Random.Range(0, streetSounds.Count - 1)];
-        creatplayer(streetNoiseVolume, clip, tr);
+        CreatePlayer(streetNoiseVolume, clip, tr);
     }
 
-    public void creatplayer(AudioSource copy,AudioClip clip,Transform tr, bool posioedsound = true)
+    public void CreatePlayer(AudioSource copy,AudioClip clip,Transform tr, bool posioedsound = true)
     {
         GameObject Player = Instantiate(soundPlayer, tr.position, tr.rotation);
         Player.transform.parent = gameObject.transform;

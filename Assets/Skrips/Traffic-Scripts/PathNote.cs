@@ -224,6 +224,7 @@ public class PathNote : MonoBehaviour
     int RendomKey(int a)
     {
         List<int> keyCollection = new List<int>();
+        if (possibleDirections.Count == 0) { Start();}
 
         foreach (int key in possibleDirections.Keys)
         {

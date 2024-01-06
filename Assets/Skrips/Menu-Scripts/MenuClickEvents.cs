@@ -8,7 +8,7 @@ public class MenuClickEvents : MonoBehaviour
 {
     [Header("GameManager")]
     [SerializeField]
-    gameloic gamemanager;
+    GameLogic gamemanager;
 
     public void StartGame()
     {
@@ -16,7 +16,7 @@ public class MenuClickEvents : MonoBehaviour
     }
     public void PouseGame() 
     {
-        gamemanager.gotoPouse(); 
+        gamemanager.GotoPause(); 
     }
 
     public void ResumeGame()
@@ -26,12 +26,12 @@ public class MenuClickEvents : MonoBehaviour
 
     public void OpenSettings() 
     {
-        gamemanager.gotoSetting();
+        gamemanager.GotoSetting();
     }
 
     public void CloseSettings()
     {
-        gamemanager.exitSetting();
+        gamemanager.ExitSetting();
     }
 
     public void ExitGame()

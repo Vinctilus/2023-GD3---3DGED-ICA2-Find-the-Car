@@ -89,12 +89,16 @@ public class TrafficManager : MonoBehaviour
 
             if (isHiddenOBJ && Barincar.TryGetComponent<CarController>(out CarController set))
             {
-                set.hiddenObject = true;
-                hiddenObject = Barincar;
-                cardisplay.ChangeCar(Visualcar);
+                set.trafficmanager = this;
+                if (isHiddenOBJ)
+                {
+                    set.hiddenObject = true;
+                    hiddenObject = Barincar;
+                    cardisplay.ChangeCar(Visualcar);
+                }
             }
 
-                Barincar.SetActive(true);
+            Barincar.SetActive(true);
 
 
 
@@ -164,12 +168,17 @@ public class TrafficManager : MonoBehaviour
     }
 
 
-    public void carssetactive(bool aktiv)
+    public void CarsSetActive(bool aktiv)
     {
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
             GameObject obj = transform.GetChild(i).gameObject;
             obj.SetActive(aktiv);
         }
+    }
+    [Button("SpwanHiddenCarNew")]
+    public void SpwanHiddenCarNew()
+    {
+        creatfield(carRelationObject, difficultyObject, maxCarsToSpawn);
     }
 }

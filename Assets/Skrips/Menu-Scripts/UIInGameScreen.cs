@@ -8,7 +8,7 @@ public class UIInGameScreen : MonoBehaviour
 {
     [Header("GameManager")]
     [SerializeField]
-    gameloic loc;
+    GameLogic loc;
     [Header("Text Fields")]
     public TextMeshProUGUI timer;
     public TextMeshProUGUI score;
@@ -16,7 +16,7 @@ public class UIInGameScreen : MonoBehaviour
     void Update()
     {
        
-        timer.SetText($"{((int)loc.timeleft) / 60}:"+ ($"{((int)loc.timeleft) % 60}").PadLeft(2, '0'));
+        timer.SetText($"{((int)loc.timeLeft) / 60}:"+ ($"{((int)loc.timeLeft) % 60}").PadLeft(2, '0'));
         score.SetText(($"{loc.score}").PadLeft(8, '0'));
     }
 }

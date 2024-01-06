@@ -55527,18 +55527,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b4a4b9c36af4a419ab5bb32586571d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HiddenObjekt: {fileID: 11400000, guid: 2fc9b2a487ab86c4ba06b053ff3a5fcb, type: 2}
-  dificultyObjekt: {fileID: 11400000, guid: 8424bc9b84d99974aa054fdb8152cef0, type: 2}
-  car: {fileID: 8552239564312428267, guid: 7acbb81325a13624badec43970abd903, type: 3}
-  repesentativ: {fileID: 0}
-  spwarnpoins: []
-  turns: []
-  carlist: []
-  todelaet: []
-  tospwan: 500
-  totalspawn: 0
-  hiddenobjekt: {fileID: 0}
+  carRelationObject: {fileID: 11400000, guid: 2fc9b2a487ab86c4ba06b053ff3a5fcb, type: 2}
+  difficultyObject: {fileID: 11400000, guid: 8424bc9b84d99974aa054fdb8152cef0, type: 2}
+  carControllerPrefab: {fileID: 8552239564312428267, guid: 7acbb81325a13624badec43970abd903, type: 3}
   cardisplay: {fileID: 1225641974}
+  spwarnpoinsList: []
+  intersectionsList: []
+  maxCarsToSpawn: 500
+  totalCarsCount: 0
+  hiddenObject: {fileID: 0}
 --- !u!1001 &1214015593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55950,7 +55947,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1972f9da00b93cf4cb7bc12036f9aa29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeforfullRotation: 20
+  timeForFullRotation: 5
+  timePast: 0
+  car: {fileID: 0}
 --- !u!1001 &1226241247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84066,34 +84065,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc81d3389de005d4a9261d3e19ac6a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeleft: 0
-  MAXTIME: 120
-  AvieUI: {fileID: 3943789973065839527}
+  timeLeft: 0
+  maxTime: 120
+  avieUI: {fileID: 3943789973065839527}
   MainMenu: {fileID: 3943789973065839527}
   InGame: {fileID: 4789595353731478793}
   Pause: {fileID: 7341717037475598451}
   End: {fileID: 8323037420742521634}
   Setting: {fileID: 7220654850574706700}
-  carmanager: {fileID: 1212694480}
-  Cars:
+  trafficmanager: {fileID: 1212694480}
+  cars:
   - {fileID: 11400000, guid: 2fc9b2a487ab86c4ba06b053ff3a5fcb, type: 2}
   - {fileID: 11400000, guid: 38304f68bc5d71b49b5101f6e06afa6d, type: 2}
   - {fileID: 11400000, guid: 90ec2c343b0fd864b852017b42238a45, type: 2}
   - {fileID: 11400000, guid: 3ca5eed1bad39804f9478eeab7969e69, type: 2}
   - {fileID: 11400000, guid: ed4ecc622b377894299bd9d232879adf, type: 2}
   - {fileID: 11400000, guid: d0224b624423a654b8cc59d43a29a461, type: 2}
-  Dificultys:
+  difficulties:
   - {fileID: 11400000, guid: 8424bc9b84d99974aa054fdb8152cef0, type: 2}
   - {fileID: 11400000, guid: 394790de84c962d47995a6e37ecd6cb2, type: 2}
   - {fileID: 11400000, guid: 753ff003414f7f642a97a3cd2a074be7, type: 2}
   - {fileID: 11400000, guid: 6befaf1aa61060a468167650f5018356, type: 2}
   - {fileID: 11400000, guid: 732b6c01a01a8dd42bdd26d61cd06abd, type: 2}
-  timeplus: 30
-  timeminus: 10
+  timePlus: 30
+  timeMinus: 10
   score: 0
   highscore: 0
-  controls: {fileID: 1933745680}
-  Audiomanger: {fileID: 1912494575}
+  inputmanager: {fileID: 1933745680}
+  audiomanager: {fileID: 1912494575}
 --- !u!1001 &1840005459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88648,20 +88647,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025d0e892b76ce3468738138e98ecf6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 758438810}
-  Gamemanager: {fileID: 1839669541}
-  SpeedCurve:
+  cameraObject: {fileID: 758438810}
+  sphereManager: {fileID: 76801926}
+  layerMaskVisualCars:
+    serializedVersion: 2
+    m_Bits: 512
+  gamemanager: {fileID: 1839669541}
+  speedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0.3
-      inSlope: 0.099999964
-      outSlope: 0.099999964
-      tangentMode: 34
+      inSlope: 0.010472133
+      outSlope: 0.010472133
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.4981353
     - serializedVersion: 3
       time: 0.5
       value: 0.35
@@ -88674,35 +88677,32 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0.6
-      inSlope: 0.50000006
-      outSlope: 0.50000006
-      tangentMode: 34
+      inSlope: 0.6273327
+      outSlope: 0.6273327
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.31273317
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Keydowntime: 0
-  ofset: {x: 0, y: 0, z: 0}
-  mouswheelseiblity: 10
-  gloablspeed: 0.9
-  deltatime: 0
-  touchdown: {x: 0, y: 0, z: 0}
-  pinchcoretion: 0.5
-  movecoretion: 0.11363637
-  deathzone: 3
-  deathzoneaktive: 0
-  minBoader: {x: 30, y: 50, z: 30}
-  maxBoader: {x: 300, y: 90, z: 300}
-  spheremanager: {fileID: 76801926}
-  benitigrange: 0.004
-  benitingoffest: 0
-  layerMaskVisualCars:
-    serializedVersion: 2
-    m_Bits: 512
-  Clickisdown: 0
-  maxdilay: 5
+  keyDownTime: 0
+  offset: {x: 0, y: 0, z: 0}
+  mouseWheelSensitivity: 10
+  globalSpeed: 0.9
+  deltaTime: 0
+  touchDown: {x: 0, y: 0, z: 0}
+  pinchCorrection: 0.5
+  moveCorrection: 0.1136364
+  deathZone: 3
+  deathZoneActive: 0
+  minBorder: {x: 30, y: 50, z: 30}
+  maxBorder: {x: 300, y: 90, z: 300}
+  benitigRange: 0.004
+  benitingOffset: 0
+  clickIsDown: 0
+  maxDelay: 5
+  hitGameObject: {fileID: 0}
 --- !u!4 &1933745681
 Transform:
   m_ObjectHideFlags: 0
