@@ -8,6 +8,7 @@ TagManager:
   - Corner
   - turn
   - Carspwarner
+  - Light
   layers:
   - Default
   - TransparentFX

@@ -1,12 +1,18 @@
 Banding world Shader
 https://www.youtube.com/watch?v=SOK3Ias5Nk0
 https://github.com/notslot/tutorial-world-bending
-Sample from AI NAVE UNITY
 
 Controler
 Touch control Move Pinch and Zoom 
 https://www.youtube.com/watch?v=K_aAnBn5khA
 
+
+Audiosystem made with Tutorials
+https://www.youtube.com/watch?v=N8whM1GjH4w
+https://www.youtube.com/watch?v=IxHPzrEq1Tc
+https://www.youtube.com/watch?v=G-JUp8AMEx0
+
+Pixabay.com
 Sounds
 by Pixabay:
 https://pixabay.com/de/sound-effects/11-minutes-of-city-sounds-6736/
