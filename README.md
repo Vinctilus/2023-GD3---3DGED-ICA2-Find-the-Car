@@ -1,6 +1,7 @@
 # Find the Car
 
 Is a third-person top-down point-and-click high-score game.
+
 Controls: You can use the mouse and keyboard, but if you have a touchscreen, you can use it too.
 WASD and arrow keys to move around.
 Mouse/Touch to select a car.
