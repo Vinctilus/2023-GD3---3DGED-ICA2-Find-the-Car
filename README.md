@@ -16,6 +16,9 @@ MouseWheel/Touch (Pinch and Zoom) to zoom in and out.
 All assets were acquired in January 2024.
 
 ### Scripts Used / Inspired
+
+DayCycle is created with ChatGPT with some modifications, but the main core is generated (lines 0-101).
+
 Touch Controls: Move, Pinch, and Zoom
 YouTube:
 - https://www.youtube.com/watch?v=K_aAnBn5khA
