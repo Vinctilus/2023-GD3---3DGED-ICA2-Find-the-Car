@@ -18,6 +18,7 @@ public class GameLogic : MonoBehaviour
     public GameObject Setting;
     [Header("Gameobjecs")]
     public TrafficManager trafficmanager;
+    public DayCycle dayCycle;
     public List<CarRelationConnections> cars;
     public List<DifficultyCurve> difficulties;
 
@@ -54,6 +55,8 @@ public class GameLogic : MonoBehaviour
         timeLeft = maxTime;
         NextLevel();
         ResumeGame();
+        dayCycle.timerIsActiv =true;
+        dayCycle.GameStart();
     }
 
     public void ResumeGame()
@@ -61,6 +64,7 @@ public class GameLogic : MonoBehaviour
         trafficmanager.CarsSetActive(true);
         inputmanager.enabled = true;
         avieUI = InGame;
+        dayCycle.timerIsActiv=true;
     }
 
     public void GotoSetting()
@@ -86,12 +90,14 @@ public class GameLogic : MonoBehaviour
         avieUI = End;
    
         trafficmanager.CarsSetActive(false);
+        dayCycle.timerIsActiv = false;
     }
 
     public void GotoPause()
     {
         avieUI = Pause;
         trafficmanager.CarsSetActive(false);
+        dayCycle.timerIsActiv = false;
     }
 
 
