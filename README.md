@@ -17,17 +17,20 @@ Includes Script InputManager (lines 114-156).
 
 Audio system made with tutorials:
 Youtube:
-- https://www.youtube.com/watch?v=N8whM1GjH4w)
-- https://www.youtube.com/watch?v=IxHPzrEq1Tc)
-- https://www.youtube.com/watch?v=G-JUp8AMEx0)
+- https://www.youtube.com/watch?v=N8whM1GjH4w
+- https://www.youtube.com/watch?v=IxHPzrEq1Tc
+- https://www.youtube.com/watch?v=G-JUp8AMEx0
+  
 AudioSettings (lines 45-46) are inspired.
 AudioManager (lines 40-47) is also inspired.
 
 Bending World Shader:
 Youtube:
 - https://www.youtube.com/watch?v=SOK3Ias5Nk0
+  
 GitHub:
 - https://github.com/notslot/tutorial-world-bending
+  
 world_bending_manager (complete, lines 0-108).
 
 ## Only Assets
