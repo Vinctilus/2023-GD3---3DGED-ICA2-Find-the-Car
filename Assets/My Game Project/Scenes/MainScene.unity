@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32111517, g: 0.73272496, b: 0.84666616, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -39917,10 +39917,11 @@ MonoBehaviour:
   sunLight2: {fileID: 1535126785}
   timerIsActiv: 0
   timeForFullRotation: 270
-  minIntensity: 0.7
+  minIntensity: 0.5
   maxIntensity: 0.8
+  dayNightSplit: 0.285398
   soneset: {r: 1, g: 0.62500006, b: 0, a: 1}
-  night: {r: 0, g: 0.4095745, b: 1, a: 1}
+  night: {r: 0.17033964, g: 0.545567, b: 1, a: 1}
   timePast: 0
   Lights: []
 --- !u!1 &3943789973065839527 stripped

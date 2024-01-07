@@ -14,9 +14,11 @@ public class DayCycle : MonoBehaviour
     [SerializeField]
     float timeForFullRotation = 10;
     [SerializeField]
-    float minIntensity = 0.6f;
+    float minIntensity = 0.5f;
     [SerializeField]
     float maxIntensity =0.8f;
+    [SerializeField]
+    float dayNightSplit = 0.285398f;
     [SerializeField]
     Color soneset;
     [SerializeField]
@@ -34,6 +36,8 @@ public class DayCycle : MonoBehaviour
         Renderer renderer = GetComponent<Renderer>();
         material = renderer.material;
         timePast = timeForFullRotation / 4;
+
+        
     }
 
     void Update()
@@ -69,12 +73,12 @@ public class DayCycle : MonoBehaviour
     void SwitchLight()
     {
         float t = Mathf.Sin(timePast / timeForFullRotation * Mathf.PI);
-        if (t >= 0.0f && t <= 0.55f)
+        if (t >= 0.0f && t < dayNightSplit)
         {
          
             SetLights(true);
         }
-        else if (t >= 0.60f && t <= 1.0f)
+        else if (t > dayNightSplit && t <= 1.0f)
         {
             SetLights(false);
             
