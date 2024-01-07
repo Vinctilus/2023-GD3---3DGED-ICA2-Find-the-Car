@@ -14081,7 +14081,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 600
-  field of view: 100
+  field of view: 65
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -14108,7 +14108,7 @@ Transform:
   m_GameObject: {fileID: 758438810}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 150, y: 55, z: 180}
+  m_LocalPosition: {x: 150, y: 40, z: 180}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35871,29 +35871,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0.3
-      inSlope: 0.010472133
-      outSlope: 0.010472133
+      inSlope: 0.1017544
+      outSlope: 0.1017544
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.4981353
-    - serializedVersion: 3
-      time: 0.5
-      value: 0.35
-      inSlope: 0.3
-      outSlope: 0.3
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.523708
     - serializedVersion: 3
       time: 1
-      value: 0.6
-      inSlope: 0.6273327
-      outSlope: 0.6273327
+      value: 0.4
+      inSlope: 0.095033064
+      outSlope: 0.095033064
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.31273317
+      inWeight: 0.43420362
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -35901,17 +35892,18 @@ MonoBehaviour:
   keyDownTime: 0
   offset: {x: 0, y: 0, z: 0}
   mouseWheelSensitivity: 10
-  globalSpeed: 0.9
+  globalSpeed: 1.8
   deltaTime: 0
   touchDown: {x: 0, y: 0, z: 0}
   pinchCorrection: 0.5
   moveCorrection: 0.1136364
   deathZone: 3
   deathZoneOff: 0
-  minBorder: {x: 30, y: 50, z: 30}
+  minBorder: {x: 30, y: 35, z: 30}
   maxBorder: {x: 300, y: 90, z: 300}
+  borderSetps: 0.0625
   benitigRange: 0.004
-  benitingOffset: 0
+  benitingOffset: 0.001060154
   clickIsDown: 0
   maxDelay: 5
   hitGameObject: {fileID: 0}

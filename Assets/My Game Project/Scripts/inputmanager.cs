@@ -52,6 +52,8 @@ public class InputManager : MonoBehaviour
     Vector3 minBorder = new Vector3(30f, 50f, 30f);
     [SerializeField]
     Vector3 maxBorder = new Vector3(300f, 90f, 300f);
+    [SerializeField]
+    float borderSetps = 0.2f;
 
 
 
@@ -162,14 +164,14 @@ public class InputManager : MonoBehaviour
             if (var < min - 3)
                 var = min - 3;
             else
-                var = var + 0.2f * deltaTime;
+                var = var + borderSetps * deltaTime;
         }
         if (var > max)
         {
             if (var > max + 3)
                 var = max + 3;
             else
-                var = var - 0.2f * deltaTime;
+                var = var - borderSetps * deltaTime;
         }
     }
 
