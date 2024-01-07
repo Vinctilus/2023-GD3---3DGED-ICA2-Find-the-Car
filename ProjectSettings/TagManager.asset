@@ -9,6 +9,7 @@ TagManager:
   - turn
   - Carspwarner
   - Light
+  - spheremanager
   layers:
   - Default
   - TransparentFX

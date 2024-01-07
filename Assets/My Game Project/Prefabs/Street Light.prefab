@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 569541702450902535}
   - component: {fileID: 2944312422508087128}
   - component: {fileID: 5755552193298331787}
+  - component: {fileID: 5268417420142399693}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Light
@@ -126,7 +127,7 @@ Light:
   m_GameObject: {fileID: 6060406779051646091}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 0
+  m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.82412034, b: 0, a: 1}
   m_Intensity: 20
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_LightLayerMask: 1
   m_RenderingLayers: 1
   m_CustomShadowLayers: 0
@@ -202,3 +203,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &5268417420142399693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6060406779051646091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70988107dd159b5479beedb729af4b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTransform: {x: 0, y: 0, z: 0}
+  amound: 0
+  spheremanager: {fileID: 0}
